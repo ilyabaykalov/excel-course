@@ -17,6 +17,8 @@
     font-style: italic;
     border-right: 1px solid $border-color;
     min-width: $info-cell-width;
+    height: 100%;
+    padding: 2px;
   }
 
   & .input {
