@@ -5,18 +5,18 @@
   text-align: center;
   position: relative;
   display: inline-block;
-  color: rgba(0, 0, 0, .7);
+  color: rgba(0, 0, 0, .5);
 
   & > i {
     font-size: 18px;
   }
 
-  &:active, &.active {
-    color: $color;
+  &:hover {
+    color: rgba(0, 0, 0, .7);
+    cursor: pointer;
   }
 
-  &:hover {
-    background: #EEEEEE;
-    cursor: pointer;
+  &:active, &.active {
+    color: $color;
   }
 }
