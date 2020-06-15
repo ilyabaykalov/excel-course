@@ -13,6 +13,7 @@
 		"arrow-parens": "off",
 		"operator-linebreak": "off",
 		"no-extend-native": "off",
-		"no-trailing-spaces": "off"
+		"no-trailing-spaces": "off",
+		"no-debugger": "off"
 	}
 }

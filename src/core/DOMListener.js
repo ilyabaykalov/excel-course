@@ -19,17 +19,19 @@ export class DOMListener {
             `Method ${ methodName } is not implemented in ${ name } Component`
         );
       }
-
-      this.$root.on(listener, this[methodName].bind(this));
+      this[methodName] = this[methodName].bind(this);
+      this.$root.on(listener, this[methodName]);
     });
   }
 
   removeDOMListeners() {
-    // TODO: реализовать удаление события
+    this.listeners.forEach(listener => {
+      const methodName = _getMethodName(listener);
+      this.$root.off(listener, this[methodName]);
+    });
   }
 }
 
-// input => onInput
 function _getMethodName(eventName) {
   return `on${ capitalize(eventName) }`;
 }

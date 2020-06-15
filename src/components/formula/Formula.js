@@ -17,11 +17,10 @@ export class Formula extends ExcelComponent {
   }
 
   onInput(event) {
-    console.log(this.$root);
-    console.log('Formula: onInput ', event.target.textContent.trim());
+    console.log(`${ this.name }: onInput `, event.target.textContent.trim());
   }
 
   onClick(event) {
-    console.log('Formula: onClick');
+    console.log(`${ this.name }: onClick`, event.target);
   }
 }
