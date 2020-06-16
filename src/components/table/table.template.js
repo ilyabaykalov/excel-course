@@ -11,10 +11,10 @@ function toColumn(content) {
   return `<div class='column'>${ content }</div>`;
 }
 
-function createRow(content) {
+function createRow(content, index = '') {
   return `
     <div class='row'>
-        <div class='row-info'></div>
+        <div class='row-info'>${ index }</div>
         <div class='row-data'>${ content }</div>
     </div>`;
 }
@@ -23,7 +23,7 @@ function toChar(_, index) {
   return String.fromCharCode(CODES.A + index);
 }
 
-export function createTable(rowsCount = 26) {
+export function createTable(rowsCount = 25) {
   const colsCount = CODES.Z - CODES.A + 1;
   const rows = [];
 
@@ -41,7 +41,7 @@ export function createTable(rowsCount = 26) {
         .map(toCell)
         .join('');
 
-    rows.push(createRow(cells));
+    rows.push(createRow(cells, i + 1));
   }
 
   return rows.join('');
