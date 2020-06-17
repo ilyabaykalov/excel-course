@@ -4,19 +4,31 @@ const CODES = {
 };
 
 function toCell(content) {
-  return `<div class='cell' contenteditable>${ content }</div>`;
+  return `
+    <div class='cell' contenteditable>${ content }</div>
+  `;
 }
 
 function toColumn(content) {
-  return `<div class='column'>${ content }</div>`;
+  return `
+    <div class='column'>
+        ${ content }
+        <div class='col-resize'></div>
+    </div>
+  `;
 }
 
 function createRow(content, index = '') {
+  const resize = index ? '<div class="row-resize"></div>' : '';
   return `
     <div class='row'>
-        <div class='row-info'>${ index }</div>
+        <div class='row-info'>
+            ${ index }
+            ${ resize }
+        </div>
         <div class='row-data'>${ content }</div>
-    </div>`;
+    </div>
+  `;
 }
 
 function toChar(_, index) {
