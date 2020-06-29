@@ -1,8 +1,8 @@
 class Dom {
   constructor(selector) {
     this.$el = typeof selector === 'string'
-      ? document.querySelector(selector)
-      : selector;
+        ? document.querySelector(selector)
+        : selector;
   }
 
   html(html) {
@@ -36,6 +36,14 @@ class Dom {
       this.$el.appendChild(node);
     }
     return this;
+  }
+
+  closest(selector) {
+    return $(this.$el.closest(selector));
+  }
+
+  getCoordinates() {
+    return this.$el.getBoundingClientRect();
   }
 }
 
