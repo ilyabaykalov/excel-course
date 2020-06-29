@@ -64,7 +64,7 @@
     }
   }
 
-  & .col-resize, & .row-resize {
+  & .column-resize, & .row-resize {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -76,7 +76,7 @@
     }
   }
 
-  & .col-resize {
+  & .column-resize {
     top: 0;
     width: 4px;
 
