@@ -22,13 +22,15 @@ export class Table extends ExcelComponent {
       const $parent = $resizer.closest('[data-type="resizable"]');
       const coordinates = $parent.getCoordinates();
 
+      const cells = this.$root
+          .findAll(`[data-column="${ $parent.data.column }"]`);
+
       document.onmousemove = e => {
         const delta = e.pageX - coordinates.right;
         const value = coordinates.width + delta;
 
         $parent.$el.style.width = `${ value }px`;
-        document.querySelectorAll(`[data-column="${ $parent.data.column }"]`)
-            .forEach(element => element.style.width = value + 'px');
+        cells.forEach(element => element.style.width = value + 'px');
       };
 
       document.onmouseup = () => {
