@@ -53,6 +53,14 @@ class Dom {
   findAll(selector) {
     return this.$el.querySelectorAll(selector);
   }
+
+  css(styles = {}) {
+    const rules = Object.keys(styles);
+
+    for (const rule of rules) {
+      this.$el.style[rule] = styles[rule];
+    }
+  }
 }
 
 export function $(selector) {
