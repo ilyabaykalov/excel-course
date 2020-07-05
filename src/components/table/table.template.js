@@ -3,17 +3,19 @@ const CODES = {
   Z: 90
 };
 
-function toCell(content) {
+function toCell(content, index) {
   return `
-    <div class='cell' contenteditable>${ content }</div>
+    <div class='cell' contenteditable data-column='${ index }'>
+        ${ content }
+    </div>
   `;
 }
 
-function toColumn(content) {
+function toColumn(content, index) {
   return `
-    <div class='column' data-type='resizable'>
+    <div class='column' data-type='resizable' data-column='${ index }'>
         ${ content }
-        <div class='column-resize' data-resize="column"></div>
+        <div class='column-resize' data-resize='column'></div>
     </div>
   `;
 }
