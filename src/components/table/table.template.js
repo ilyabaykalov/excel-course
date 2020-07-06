@@ -22,7 +22,7 @@ function toColumn(content, index) {
 
 function createRow(content, index = '') {
   const resize = index
-      ? '<div class="row-resize" data-resize="row"></div>'
+      ? '<div class="row-resizeHandler" data-resizeHandler="row"></div>'
       : '';
   return `
     <div class='row' data-type='resizable' >
