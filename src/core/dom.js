@@ -55,11 +55,9 @@ class Dom {
   }
 
   css(styles = {}) {
-    const rules = Object.keys(styles);
-
-    for (const rule of rules) {
-      this.$el.style[rule] = styles[rule];
-    }
+    Object
+        .keys(styles)
+        .forEach(rule => this.$el.style[rule] = styles[rule]);
   }
 }
 
